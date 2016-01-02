@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxComm", "MaxComm\MaxComm.csproj", "{741CF9D9-F19C-4FFE-9970-49C3A6EE1086}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{9443E1A6-7FC4-4828-BD99-30B0CA2A850B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResolVBus", "ResolVBus\ResolVBus.csproj", "{213C2B87-3CE9-4E95-A3E2-9B7CAEB6D8F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomoSolarInterface", "DomoSolarInterface\DomoSolarInterface.csproj", "{1BA523CA-002A-440B-A19A-8D1BC2FDF631}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{741CF9D9-F19C-4FFE-9970-49C3A6EE1086}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{741CF9D9-F19C-4FFE-9970-49C3A6EE1086}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{741CF9D9-F19C-4FFE-9970-49C3A6EE1086}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{741CF9D9-F19C-4FFE-9970-49C3A6EE1086}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9443E1A6-7FC4-4828-BD99-30B0CA2A850B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9443E1A6-7FC4-4828-BD99-30B0CA2A850B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9443E1A6-7FC4-4828-BD99-30B0CA2A850B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9443E1A6-7FC4-4828-BD99-30B0CA2A850B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{213C2B87-3CE9-4E95-A3E2-9B7CAEB6D8F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{213C2B87-3CE9-4E95-A3E2-9B7CAEB6D8F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{213C2B87-3CE9-4E95-A3E2-9B7CAEB6D8F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{213C2B87-3CE9-4E95-A3E2-9B7CAEB6D8F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BA523CA-002A-440B-A19A-8D1BC2FDF631}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BA523CA-002A-440B-A19A-8D1BC2FDF631}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BA523CA-002A-440B-A19A-8D1BC2FDF631}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BA523CA-002A-440B-A19A-8D1BC2FDF631}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(DPCodeReviewSolutionGUID) = preSolution
+		DPCodeReviewSolutionGUID = {00000000-0000-0000-0000-000000000000}
+	EndGlobalSection
+EndGlobal
