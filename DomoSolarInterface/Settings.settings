@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="MaxCommPort" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">COM4</Value>
+      <Value Profile="(Default)">COM3</Value>
     </Setting>
     <Setting Name="ResolPort" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">COM3</Value>
+      <Value Profile="(Default)">COM4</Value>
     </Setting>
     <Setting Name="PollInterval" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">10</Value>

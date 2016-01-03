@@ -8,38 +8,34 @@ namespace Test
 	{
 		static void Main(string[] args)
 		{
-			System.Console.Out.WriteLine ("{0,6:F1}", 12.34M);
-
-			ResolVBus.Port resol = new ResolVBus.Port ("COM3");
-
-			ResolVBus.DeltaSolData deltaSol = new ResolVBus.DeltaSolData (resol.ReceiveFrames ());
-
-			System.Console.Out.WriteLine ("DeltaSol: {5} {0}°C, {1}°C, {2}°C, {3}%, {4}h", deltaSol.TemperatureSensor1, deltaSol.TemperatureSensor2, deltaSol.TemperatureSensor3, deltaSol.Pump, deltaSol.TotalPumpTime, System.DateTime.Now.ToShortTimeString ());
-
-			MaxComm.Port port = new MaxComm.Port ("COM4");
-
-			MaxComm.SolarMaxData solarMaxData1 = new MaxComm.SolarMaxData (1, port.ExchangeData (1, 100, "PAC;PRL;TKK;KHR;KYR;KMT;KDY;KT0;UDC;IDC;UL1;IL1;TNP"));
-			MaxComm.SolarMaxData solarMaxData2 = new MaxComm.SolarMaxData (2, port.ExchangeData (2, 100, "PAC;PRL;TKK;KHR;KYR;KMT;KDY;KT0;UDC;IDC;UL1;IL1;TNP"));
-
-			System.Console.Out.WriteLine ("SolarMax #1:");
-			Program.DumpSolarMax (solarMaxData1);
-			System.Console.Out.WriteLine ("SolarMax #2:");
-			Program.DumpSolarMax (solarMaxData2);
-
-#if false
-			System.Console.Out.WriteLine ("SolarMax #1:");
-			Program.DumpResults (port.ExchangeData (1, 100, "TYP;PAC;PRL;TKK;KHR;KYR;KMT;KDY;KT0;UDC;IDC;UL1;IL1;TNP"));
-			System.Console.Out.WriteLine ();
-
-			System.Console.Out.WriteLine ("SolarMax #2:");
-			Program.DumpResults (port.ExchangeData (2, 100, "TYP;PAC;PRL;TKK;KHR;KYR;KMT;KDY;KT0;UDC;IDC;UL1;IL1;TNP"));
-			System.Console.Out.WriteLine ();
-#endif
-			
-			System.Console.In.ReadLine ();
+            Program.DumpDeltaSol ();
+            Program.DumpSolarMax ();
+			System.Console.ReadLine ();
 		}
 
-		private static void DumpSolarMax(MaxComm.SolarMaxData data)
+
+        private static void DumpDeltaSol()
+        {
+            ResolVBus.Port resol = new ResolVBus.Port("COM4");
+            ResolVBus.DeltaSolData deltaSol = new ResolVBus.DeltaSolData(resol.ReceiveFrames());
+            System.Console.Out.WriteLine("DeltaSol: {5} {0}°C, {1}°C, {2}°C, {3}%, {4}h", deltaSol.TemperatureSensor1, deltaSol.TemperatureSensor2, deltaSol.TemperatureSensor3, deltaSol.Pump, deltaSol.TotalPumpTime, System.DateTime.Now.ToShortTimeString());
+        }
+
+        private static void DumpSolarMax()
+        {
+            MaxComm.Port port = new MaxComm.Port("COM3");
+
+            MaxComm.SolarMaxData solarMaxData1 = new MaxComm.SolarMaxData(1, port.ExchangeData(1, 100, "PAC;PRL;TKK;KHR;KYR;KMT;KDY;KT0;UDC;IDC;UL1;IL1;TNP"));
+            MaxComm.SolarMaxData solarMaxData2 = new MaxComm.SolarMaxData(2, port.ExchangeData(2, 100, "PAC;PRL;TKK;KHR;KYR;KMT;KDY;KT0;UDC;IDC;UL1;IL1;TNP"));
+
+            System.Console.Out.WriteLine("SolarMax #1:");
+            Program.DumpSolarMax(solarMaxData1);
+            System.Console.Out.WriteLine("SolarMax #2:");
+            Program.DumpSolarMax(solarMaxData2);
+        }
+
+
+        private static void DumpSolarMax(MaxComm.SolarMaxData data)
 		{
 			System.Console.Out.WriteLine ("Power: {0} W, {1} %; {2}°C", data.PowerAC, data.PowerRelative, data.ConverterTemperature);
 			System.Console.Out.WriteLine ("AC: {0} V, {1} A", data.VoltageAC, data.CurrentAC);

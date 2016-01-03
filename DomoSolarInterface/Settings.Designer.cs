@@ -25,7 +25,7 @@ namespace DomoSolarInterface {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("COM4")]
+        [global::System.Configuration.DefaultSettingValueAttribute("COM3")]
         public string MaxCommPort {
             get {
                 return ((string)(this["MaxCommPort"]));
@@ -34,7 +34,7 @@ namespace DomoSolarInterface {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("COM3")]
+        [global::System.Configuration.DefaultSettingValueAttribute("COM4")]
         public string ResolPort {
             get {
                 return ((string)(this["ResolPort"]));
