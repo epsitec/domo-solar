@@ -23,11 +23,9 @@ namespace DomoSolarInterface
 
 			try
 			{
-				System.Threading.Thread.Sleep (Settings.Default.LogInterval * 1000);
-
 				while (true)
 				{
-					System.Threading.Thread.Sleep (2*60*1000);
+					System.Threading.Thread.Sleep (6*1000);
 					
 					try
 					{
@@ -93,8 +91,6 @@ namespace DomoSolarInterface
 					catch
 					{
 					}
-
-					System.Threading.Thread.Sleep (System.Math.Max (Settings.Default.LogInterval, 10) * 1000);
 				}
 			}
 			catch (System.Threading.ThreadInterruptedException)

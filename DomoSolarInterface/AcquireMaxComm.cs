@@ -27,31 +27,20 @@ namespace DomoSolarInterface
 			}
 		}
 
-		public void RunThread()
+		public void Acquire()
 		{
 			try
 			{
-				while (true)
-				{
-					try
-					{
-						MaxComm.SolarMaxData solarMaxData1 = new MaxComm.SolarMaxData (1, this.port.ExchangeData (1, 100, "PAC;PRL;TKK;KHR;KYR;KMT;KDY;KT0;UDC;IDC;UL1;IL1;TNP"));
-						MaxComm.SolarMaxData solarMaxData2 = new MaxComm.SolarMaxData (2, this.port.ExchangeData (2, 100, "PAC;PRL;TKK;KHR;KYR;KMT;KDY;KT0;UDC;IDC;UL1;IL1;TNP"));
+				MaxComm.SolarMaxData solarMaxData1 = new MaxComm.SolarMaxData (1, this.port.ExchangeData (1, 100, "PAC;PRL;TKK;KHR;KYR;KMT;KDY;KT0;UDC;IDC;UL1;IL1;TNP"));
+				MaxComm.SolarMaxData solarMaxData2 = new MaxComm.SolarMaxData (2, this.port.ExchangeData (2, 100, "PAC;PRL;TKK;KHR;KYR;KMT;KDY;KT0;UDC;IDC;UL1;IL1;TNP"));
 
-						this.Publish (solarMaxData1);
-						this.Publish (solarMaxData2);
-					}
-					catch
-					{
-						this.solarMaxData1 = null;
-						this.solarMaxData2 = null;
-					}
-
-					System.Threading.Thread.Sleep (System.Math.Max (Settings.Default.PollInterval, 1) * 1000);
-				}
+				this.Publish (solarMaxData1);
+				this.Publish (solarMaxData2);
 			}
-			catch (System.Threading.ThreadInterruptedException)
+			catch
 			{
+				this.solarMaxData1 = null;
+				this.solarMaxData2 = null;
 			}
 		}
 

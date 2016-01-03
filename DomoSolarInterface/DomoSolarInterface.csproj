@@ -6,7 +6,7 @@
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{1BA523CA-002A-440B-A19A-8D1BC2FDF631}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DomoSolarInterface</RootNamespace>
     <AssemblyName>DomoSolarInterface</AssemblyName>
@@ -37,6 +37,9 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Configuration.Install" />
@@ -49,9 +52,6 @@
     <Compile Include="AcquireMaxComm.cs" />
     <Compile Include="AcquisitionService.cs">
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="AcquisitionService.Designer.cs">
-      <DependentUpon>AcquisitionService.cs</DependentUpon>
     </Compile>
     <Compile Include="AcquireResol.cs" />
     <Compile Include="DataJournal.cs" />
@@ -83,10 +83,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AcquisitionService.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>AcquisitionService.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ProjectInstaller.resx">
       <SubType>Designer</SubType>
       <DependentUpon>ProjectInstaller.cs</DependentUpon>

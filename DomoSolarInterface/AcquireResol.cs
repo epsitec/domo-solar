@@ -19,34 +19,24 @@ namespace DomoSolarInterface
 			}
 		}
 
-		public void RunThread()
-		{
-			try
-			{
-				while (true)
-				{
-					try
-					{
-						ResolVBus.Frame[] frames = this.port.ReceiveFrames ();
+        public void Acquire()
+        {
+            try
+            {
+                ResolVBus.Frame[] frames = this.port.ReceiveFrames();
 
-						if (frames != null)
-						{
-							ResolVBus.DeltaSolData data = new ResolVBus.DeltaSolData (frames);
-							this.Publish (data);
-						}
-					}
-					catch
-					{
-						this.deltaSolData = null;
-					}
-
-					System.Threading.Thread.Sleep (System.Math.Max (Settings.Default.PollInterval, 1) * 1000);
-				}
-			}
-			catch (System.Threading.ThreadInterruptedException)
-			{
-			}
-		}
+                if ((frames != null) &&
+                    (frames.Length > 0))
+                {
+                    ResolVBus.DeltaSolData data = new ResolVBus.DeltaSolData(frames);
+                    this.Publish(data);
+                }
+            }
+            catch
+            {
+                this.deltaSolData = null;
+            }
+        }
 
 		private void Publish(ResolVBus.DeltaSolData data)
 		{

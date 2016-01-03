@@ -63,7 +63,7 @@ namespace DomoSolarInterface
 
 						//	TODO: store resulting data...
 
-						System.Diagnostics.Debug.WriteLine (System.DateTime.Now.ToShortTimeString ());
+						System.Console.WriteLine (System.DateTime.Now.ToShortTimeString ());
 
 						if (deltaSolData != null)
 						{
@@ -77,7 +77,7 @@ namespace DomoSolarInterface
 								}
 							}
 
-							System.Diagnostics.Debug.WriteLine (string.Format ("DeltaSol: {0}°C, {1}°C, {2}°C, {3}%, {4}h", deltaSolData.TemperatureSensor1, deltaSolData.TemperatureSensor2, deltaSolData.TemperatureSensor3, deltaSolData.Pump, deltaSolData.TotalPumpTime));
+							System.Console.WriteLine ("DeltaSol: {0}°C, {1}°C, {2}°C, {3}%, {4}h", deltaSolData.TemperatureSensor1, deltaSolData.TemperatureSensor2, deltaSolData.TemperatureSensor3, deltaSolData.Pump, deltaSolData.TotalPumpTime);
 						}
 						else
 						{
@@ -102,7 +102,7 @@ namespace DomoSolarInterface
 								}
 							}
 
-							System.Diagnostics.Debug.WriteLine (string.Format ("SolarMax{0}: {1}W, DC: {2}V {3}A, AC: {4}V {5}A", solarMaxData1.Id, solarMaxData1.PowerAC, solarMaxData1.VoltageDC, solarMaxData1.CurrentDC, solarMaxData1.VoltageAC, solarMaxData1.CurrentAC));
+							System.Console.WriteLine ("SolarMax{0}: {1}W, DC: {2}V {3}A, AC: {4}V {5}A", solarMaxData1.Id, solarMaxData1.PowerAC, solarMaxData1.VoltageDC, solarMaxData1.CurrentDC, solarMaxData1.VoltageAC, solarMaxData1.CurrentAC);
 						}
 						else
 						{
@@ -127,7 +127,7 @@ namespace DomoSolarInterface
 								}
 							}
 
-							System.Diagnostics.Debug.WriteLine (string.Format ("SolarMax{0}: {1}W, DC: {2}V {3}A, AC: {4}V {5}A", solarMaxData2.Id, solarMaxData2.PowerAC, solarMaxData2.VoltageDC, solarMaxData2.CurrentDC, solarMaxData2.VoltageAC, solarMaxData2.CurrentAC));
+                            System.Console.WriteLine ("SolarMax{0}: {1}W, DC: {2}V {3}A, AC: {4}V {5}A", solarMaxData2.Id, solarMaxData2.PowerAC, solarMaxData2.VoltageDC, solarMaxData2.CurrentDC, solarMaxData2.VoltageAC, solarMaxData2.CurrentAC);
 						}
 						else
 						{

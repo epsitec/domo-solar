@@ -1,7 +1,3 @@
-using System.Collections.Generic;
-using System.ServiceProcess;
-using System.Text;
-
 namespace DomoSolarInterface
 {
 	static class Program
@@ -11,17 +7,24 @@ namespace DomoSolarInterface
 		/// </summary>
 		static void Main()
 		{
-			ServiceBase[] ServicesToRun;
+            var service = new AcquisitionService ();
 
-			// More than one user Service may run within the same process. To add
-			// another service to this process, change the following line to
-			// create a second service object. For example,
-			//
-			//   ServicesToRun = new ServiceBase[] {new Service1(), new MySecondUserService()};
-			//
-			ServicesToRun = new ServiceBase[] { new AcquisitionService () };
+            service.Start ();
 
-			ServiceBase.Run (ServicesToRun);
+            try
+            {
+                while (true)
+                {
+                    service.Acquire();
+                    System.Threading.Thread.Sleep(5 * 1000);
+                }
+            }
+            catch
+            {
+
+            }
+
+            service.Stop ();
 		}
 	}
 }
